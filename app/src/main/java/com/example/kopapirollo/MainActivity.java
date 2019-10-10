@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Random;
 
@@ -66,15 +67,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             switch (gepGeneralt){
                 case 0:
                     gepValasztasa = "ko";
-                    imageJatekos.setImageResource(R.drawable.rock);
+                    imageGep.setImageResource(R.drawable.rock);
                     break;
                 case 1:
                     gepValasztasa = "papir";
-                    imageJatekos.setImageResource(R.drawable.paper);
+                    imageGep.setImageResource(R.drawable.paper);
                     break;
                 case 2:
                     gepValasztasa = "ollo";
-                    imageJatekos.setImageResource(R.drawable.scissors);
+                    imageGep.setImageResource(R.drawable.scissors);
                     break;
             }
 
@@ -83,29 +84,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             if (gepValasztasa.equals("ko") && jatekosValasztasa.equals("ollo")) {
                 gepPontszam++;
                 uzenet = "A kő erősebb mint az olló. Vesztettél";
-            }else
-                if (gepValasztasa.equals("ko") && jatekosValasztasa.equals("papir")){
+            }else if (gepValasztasa.equals("ko") && jatekosValasztasa.equals("papir")){
                     jatekosPontszam++;
                     uzenet = "A papír erősebb mint a kő. Nyertél";
-                }
-            if (gepValasztasa.equals("papir") && jatekosValasztasa.equals("ko")) {
+            }else if (gepValasztasa.equals("papir") && jatekosValasztasa.equals("ko")) {
                 gepPontszam++;
                 uzenet = "A papír erősebb mint az kő. Vesztettél";
-            }else
-            if (gepValasztasa.equals("papir") && jatekosValasztasa.equals("ollo")){
+            }else if (gepValasztasa.equals("papir") && jatekosValasztasa.equals("ollo")){
                 jatekosPontszam++;
                 uzenet = "Az olló erősebb mint a papír. Nyertél";
-            }
-            if (gepValasztasa.equals("ollo") && jatekosValasztasa.equals("papir")) {
+            }else if (gepValasztasa.equals("ollo") && jatekosValasztasa.equals("papir")) {
                 gepPontszam++;
                 uzenet = "Az olló erősebb mint a papír. Vesztettél";
-            }else
-            if (gepValasztasa.equals("ollo") && jatekosValasztasa.equals("ko")){
+            }else if (gepValasztasa.equals("ollo") && jatekosValasztasa.equals("ko")){
                 jatekosPontszam++;
                 uzenet = "A kő erősebb mint az olló. Nyertél";
-            }else{
+            }else {
                 uzenet = "Döntetlen";
             }
+            textEredmeny.setText(String.format("Eredmény: Gép: %d - Játékos: %d", gepPontszam, jatekosPontszam));
+            Toast.makeText( MainActivity.this, uzenet, Toast.LENGTH_SHORT).show();
         }
     }
 

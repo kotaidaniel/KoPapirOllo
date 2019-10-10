@@ -21,10 +21,10 @@
         />
 
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_marginTop="15dp"
-        android:background="@drawable/rock"
+        app:srcCompat="@drawable/rock"
         android:id="@+id/imageGep"
         />
 
@@ -35,10 +35,10 @@
         android:text="A gép választása"
         />
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:layout_marginTop="15dp"
-            android:background="@drawable/paper"
+            app:srcCompat="@drawable/paper"
             android:id="@+id/imageJatekos"
             />
 
