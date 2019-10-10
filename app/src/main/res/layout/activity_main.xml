@@ -38,7 +38,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginTop="15dp"
-            android:background="@drawable/rock"
+            android:background="@drawable/paper"
             android:id="@+id/imageJatekos"
             />
 
