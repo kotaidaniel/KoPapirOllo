@@ -77,6 +77,35 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     imageJatekos.setImageResource(R.drawable.scissors);
                     break;
             }
+
+            String uzenet = "";
+
+            if (gepValasztasa.equals("ko") && jatekosValasztasa.equals("ollo")) {
+                gepPontszam++;
+                uzenet = "A kő erősebb mint az olló. Vesztettél";
+            }else
+                if (gepValasztasa.equals("ko") && jatekosValasztasa.equals("papir")){
+                    jatekosPontszam++;
+                    uzenet = "A papír erősebb mint a kő. Nyertél";
+                }
+            if (gepValasztasa.equals("papir") && jatekosValasztasa.equals("ko")) {
+                gepPontszam++;
+                uzenet = "A papír erősebb mint az kő. Vesztettél";
+            }else
+            if (gepValasztasa.equals("papir") && jatekosValasztasa.equals("ollo")){
+                jatekosPontszam++;
+                uzenet = "Az olló erősebb mint a papír. Nyertél";
+            }
+            if (gepValasztasa.equals("ollo") && jatekosValasztasa.equals("papir")) {
+                gepPontszam++;
+                uzenet = "Az olló erősebb mint a papír. Vesztettél";
+            }else
+            if (gepValasztasa.equals("ollo") && jatekosValasztasa.equals("ko")){
+                jatekosPontszam++;
+                uzenet = "A kő erősebb mint az olló. Nyertél";
+            }else{
+                uzenet = "Döntetlen";
+            }
         }
     }
 
